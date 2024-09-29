@@ -1,50 +1,26 @@
-function verificar(){
-    var data = new Date()
-    var ano = data.getFullYear()
-    var fano = document.getElementById('txtano')
-    var res = document.getElementById('res')
+function contar(){
+        var ini = document.getElementById('txti')
+        var fim = document.getElementById('txtf')
+        var passo = document.getElementById('txtp')
+        let res = document.getElementById('res')
 
-    if (fano.value.length == 0 || Number(fano.value) > ano){
-        window.alert('ERRO verificar os dados e tente novamente')
-    } else {
-       var fsex = document.getElementsByName('radsex')
-       var idade = ano - Number(fano.value)
-       var genero = ''
-       var img = document.createElement('img')
-       img.setAttribute('id' , 'foto')
-       if (fsex[0].checked){
-        genero = 'homem'
-            if (idade >= 0 && idade < 10){
-                //creinaça
-                img.setAttribute('src', 'homembb.png')
-            }else if(idade < 21){
-                //jovem
-                img.setAttribute('src', 'homemjovem.png')
-            }else if(idade < 50){
-                //adulto
-                img.setAttribute('src', 'homemadulto.png')
-            }else {
-                //velho
-                img.setAttribute('src', 'homemvelho.png')
+        if (ini.value.length == 0 || fim.value.length ==0 || passo.value.length == 0){
+           window.alert('ERRO  falta dados!')
+        } else{
+            res.innerHTML = 'contando:'
+            let i = Number(ini.value)
+            let f = Number(fim.value)
+            let p = Number(passo.value)
+        if(i < f){
+            // contagem crescente
+            for(let c = i; c <= f; c += p){
+                res.innerHTML += `${c} ,`
             }
-       }else if(fsex[1].checked) {
-        genero = 'mulher'
-        if (idade >= 0 && idade <10){
-            //creinaça
-            img.setAttribute('src', 'mulherbb.png')
-        }else if(idade < 21){
-            //jovem
-            img.setAttribute('src', 'mulherjovem.png')
-        }else if(idade < 50){
-            //adulto
-            img.setAttribute('src', 'mulheradulta.png')
-        }else {
-            //velho
-            img.setAttribute('src', 'mulhervelha.png')
+        } else {
+           // contragem regressiva
+            for(let c = i; c >= f; c -= p){
+                res.innerHTML += `${c} ,`
+            }
         }
-       }
-       res.style.textAlign = 'center'
-       res.innerHTML = `detectamos ${genero} com ${idade} anos.`
-       res.appendChild(img)
+        }
     }
-}
