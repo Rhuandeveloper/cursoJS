@@ -3,26 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super computador</title>
+    <title>tabuada</title>
    <link rel="stylesheet" href="estilo.css">
 
 </head>
 <body>
     <header>
-        <h1>Vamos contar</h1>
+        <h1>tabuada</h1>
     </header>
     
     <section>
-<div id="dados">
-    <p>Inicio <input type="number" name="inicio" id="txti"> </p>
-    <p>fim; <input type="number" name="fim" id="txtf"></p>
-    <p>Passo <input type="number" name="passo" id="txtp"></p>
-    <p><input type="button" value="contar" onclick="contar()"></p>
-   <p>Numero: <input type="number" name="num" id="txtn"></p>
-   <input type="button" value="gerar tabuada">
+<div>
+    <p>Numero: <input type="number" name="num" id="txtn"></p>
+    <input type="button" value="gerar tabuada" onclick="tabuada()">
 </div>
-<div id="res">
-    Preparando a contagem...
+<div>
+    <select name="tabuada" id="seltab" size="10">
+        <option value=""> Digite um numero acima</option>
+    </select>
 </div>
     </section>
     

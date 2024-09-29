@@ -1,26 +1,20 @@
-function contar(){
-        var ini = document.getElementById('txti')
-        var fim = document.getElementById('txtf')
-        var passo = document.getElementById('txtp')
-        let res = document.getElementById('res')
-
-        if (ini.value.length == 0 || fim.value.length ==0 || passo.value.length == 0){
-           window.alert('ERRO  falta dados!')
-        } else{
-            res.innerHTML = 'contando:'
-            let i = Number(ini.value)
-            let f = Number(fim.value)
-            let p = Number(passo.value)
-        if(i < f){
-            // contagem crescente
-            for(let c = i; c <= f; c += p){
-                res.innerHTML += `${c} ,`
-            }
-        } else {
-           // contragem regressiva
-            for(let c = i; c >= f; c -= p){
-                res.innerHTML += `${c} ,`
-            }
-        }
+function tabuada(){
+    let num= document.getElementById('txtn')
+    let tab = document.getElementById('seltab')
+    if(num.value.length == 0) {
+        window.alert('por favor, digite um numero valido!')
+    } else{
+        let n = Number(num.value)
+        let c = 1
+        tab.innerHTML = ''
+        while (c <= 10){
+            let item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n*c}`
+            item.value = `tab${c}`
+            tab.appendChild(item)
+            c++
         }
     }
+
+
+}
