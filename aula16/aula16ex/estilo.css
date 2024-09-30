@@ -18,10 +18,15 @@ section{
     
 }
 
-div{
+select#flista{
+    width: 150px;
+    
+}
+
+/*div{
     text-align: center;
     padding: 8px;
-}
+}*/
 
 footer{
     color: white;

@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora do dia</title>
+    <title>analizador de numeros</title>
    <link rel="stylesheet" href="estilo.css">
 <body onload="carregar()">
     <header>
-        <h1>Hora do dia</h1>
+        <h1>analizador de numeros</h1>
     </header>
     
     <section>
-<div id="msg">
-    aqui vai aprecer a mensagem
+<div>
+    Numero (entre 1 e 100):
+    <input type="number" name="fnum" id="fnum">
+    <input type="button" value="adicionar" onclick="adicionar()">
+    <br><br><select name="flista" id="flista" size="10"></select>
+    <br><input type="button" value="Finalizar">
 </div>
-<div id="foto">
-    <img id="imagem" src="manhecer.png" alt="foto do dia">
+<div id="res">
+    
 </div>
     </section>
     
